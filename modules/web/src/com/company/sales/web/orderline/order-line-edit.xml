@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.sales.web.orderline">
+    <data>
+        <instance id="orderLineDc"
+                  class="com.company.sales.entity.OrderLine"
+                  view="orderLine-with-product">
+            <loader id="orderLineDl"/>
+        </instance>
+    </data>
+    <dialogMode height="200"
+                width="450"/>
+    <layout expand="spacer"
+            spacing="true">
+        <form id="form"
+              dataContainer="orderLineDc"
+              width="100%">
+            <column width="100%">
+                <pickerField id="productField"
+                             property="product">
+                    <actions>
+                        <action id="lookup"
+                                type="picker_lookup"/>
+                        <action id="clear"
+                                type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <textField id="quantityField"
+                           property="quantity"/>
+            </column>
+        </form>
+        <label id="spacer"/>
+        <hbox id="editActions"
+              spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
