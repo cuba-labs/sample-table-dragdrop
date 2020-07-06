@@ -1,4 +1,4 @@
-rootProject.name = 'sample-sales'
+rootProject.name = 'sample-table-dragdrop'
 def modulePrefix = 'app'
 include(":${modulePrefix}-global" , ":${modulePrefix}-core", ":${modulePrefix}-web" )
 project(":${modulePrefix}-global" ).projectDir = new File(settingsDir, 'modules/global')
